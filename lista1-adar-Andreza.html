@@ -418,8 +418,6 @@ summary {
 </div>
 
 
-<div id="em-edicao" class="section level1">
-<h1>Em edicao</h1>
 <div id="exercícios" class="section level2">
 <h2><strong>5.6 Exercícios</strong></h2>
 <ol style="list-style-type: decimal">
@@ -524,7 +522,7 @@ result_d</code></pre>
 <pre><code>## [1] 5.67e-08</code></pre>
 <pre class="r"><code>(c_solar &lt;- 1380)</code></pre>
 <pre><code>## [1] 1380</code></pre>
-<pre class="r"><code>(c_avog &lt;- 6.022E23)</code></pre>
+<pre class="r"><code>(na &lt;- 6.022E23)</code></pre>
 <pre><code>## [1] 6.022e+23</code></pre>
 <pre class="r"><code>(rd &lt;- 287.04)</code></pre>
 <pre><code>## [1] 287.04</code></pre>
@@ -601,17 +599,16 @@ x14 &lt;- -1.05501 + 0.0650857 * si
 x15 &lt;- -2.07588 + 0.0423954 * cl
 x16 &lt;- -6.03402 + 4.80572 * db
 x17 &lt;- -2.18409 + 8.84963 * (me / 100)
-z9 &lt;- 0.175202 + 1.18513 * (x17 - 0.0996042) * (x17^2) + 0.327915 * x16 - 0.0758657 * (x16^2)
+z9 &lt;- 0.175202 + (1.18513 * x17) - (0.0996042 * (x17^2)) + (0.327915 * x16) - (0.0758657 * (x16^2))
 z10 &lt;- 0.929344 * z9 + 0.132519 * x14
 
-psi_10 &lt;- 0.339255 + 0.112526 * z10
-psi_10</code></pre>
-<pre><code>## [1] 0.3567207</code></pre>
+(psi_10 &lt;- 0.339255 + 0.112526 * z10)</code></pre>
+<pre><code>## [1] 0.3602289</code></pre>
 <pre class="r"><code>z11 &lt;- 0.191452 + (1.25652 * x17) - (0.079098 * (x17^2)) + (0.393814 * x16) - (0.152095 * x17 * x16)
 
-(cc &lt;- 0.28951 + 0103815 * z11)</code></pre>
-<pre><code>## [1] 22476.65</code></pre>
-<pre class="r"><code>z13 &lt;- 0.235084 + 0.33033 * x15 - 0.191838 * ((x15)^2) + 0.543679 * ((x15)^3) + 0.977685 * x17 + 0.304174 * x15 * x17 - 0.218857 * ((x17)^2) - 0.164373 * x15 * ((x17)^2) + 0.0415057 * ((x17)^3) + 0.373361 * x16 + 0.0811861 * x17 * x16 - 0.0768087 * x15 * x17 * x16
+(cc &lt;- 0.28951 + 0.103815 * z11)</code></pre>
+<pre><code>## [1] 0.3119864</code></pre>
+<pre class="r"><code>z13 &lt;- 0.235084 + (0.33033 * x15) - (0.191838 * (x15^2)) + (0.543679 * (x15^3)) + (0.977685 * x17) + (0.304174 * x15 * x17) - (0.218857 * (x17^2)) - (0.164373 * x15 * (x17^2)) + (0.0415057 * (x17^3)) + (0.373361 * x16) + (0.0811861 * x17 * x16) - (0.0768087 * x15 * x17 * x16)
 
 pmp &lt;- 0.214008 + 0.0862945 * z13
 pmp</code></pre>
@@ -632,7 +629,6 @@ pmp</code></pre>
 <li><p>após os códigos usados para resolver as questões 8 e 9, adicione uma nova linha com a expressão <code>sessionInfo()</code>.</p></li>
 <li><p>Finalmente rode o <em>script</em> usando o R no modo não iterativo. Anexe o arquivo de saída <code>solucao-q10-NomeDoAluno.Rout</code> como resposta para este problema.</p></li>
 </ul>
-</div>
 </div>
 
 
